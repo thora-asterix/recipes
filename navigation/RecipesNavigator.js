@@ -28,12 +28,7 @@ const RecipesNavigator = createStackNavigator({
     
     },
     
-    // Categories: { 
-    //     screen: CategoriesScreen
-    // },
-    // CategoryMeals: {
-    //     screen: CategoryMealsScreen
-    // },
+
     MealDetail: {
         screen: MealDetailScreen,
         navigationOptions: ({navigation}) => ({
@@ -132,40 +127,7 @@ const RecipesFavTabNavigator = createBottomTabNavigator({
 
 
 
-// const MainNavigator = createDrawerNavigator({
-//     Recipes: RecipesFavTabNavigator,
-//     RecipeFavorites: { screen: RecipesFavTabNavigator},
-//     Filters: FiltersNavigator
-// });
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//     },
-//     drawerHeader: {
-//         backgroundColor: '#5637DD',
-//         height: 140,
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         flex: 1,
-//         flexDirection: 'row'
-//     },
-//     drawerHeaderText: {
-//         color: '#fff',
-//         fontSize: 24,
-//         fontWeight: 'bold'
-//     },
-//     drawerImage: {
-//         margin: 10,
-//         height: 60,
-//         width: 60
-//     },
-//     stackIcon: {
-//         marginLeft: 10,
-//         color: '#fff',
-//         fontSize: 24
-//     }
-// });
 
 export default createAppContainer(RecipesFavTabNavigator);
 
