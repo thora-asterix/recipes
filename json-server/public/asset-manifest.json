@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b8ac87bf.chunk.css",
+    "main.js": "/static/js/main.4aa91743.chunk.js",
+    "main.js.map": "/static/js/main.4aa91743.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.507adfe1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.507adfe1.js.map",
+    "static/css/2.202f2ebe.chunk.css": "/static/css/2.202f2ebe.chunk.css",
+    "static/js/2.932c27ab.chunk.js": "/static/js/2.932c27ab.chunk.js",
+    "static/js/2.932c27ab.chunk.js.map": "/static/js/2.932c27ab.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.268de1aacf7149701be4cb0946b2f7ea.js": "/precache-manifest.268de1aacf7149701be4cb0946b2f7ea.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.202f2ebe.chunk.css.map": "/static/css/2.202f2ebe.chunk.css.map",
+    "static/css/main.b8ac87bf.chunk.css.map": "/static/css/main.b8ac87bf.chunk.css.map",
+    "static/media/font-awesome.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/index.css": "/static/media/lobster-latin-400.fe012fb7.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.507adfe1.js",
+    "static/css/2.202f2ebe.chunk.css",
+    "static/js/2.932c27ab.chunk.js",
+    "static/css/main.b8ac87bf.chunk.css",
+    "static/js/main.4aa91743.chunk.js"
+  ]
+}

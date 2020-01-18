@@ -1,8 +1,10 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { recipes } from './recipes'
 
+
 export const ConfigureStore = () => {
+    // const middleware = [thunk]
     const store = createStore(
         combineReducers(
             {
@@ -10,7 +12,8 @@ export const ConfigureStore = () => {
                 recipes
             }
         ),
-        applyMiddleware(thunk)
+       compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+       )
     );
     return store;
 }

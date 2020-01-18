@@ -35,7 +35,7 @@ componentDidMount() {
 
 
 render() {
-    const renderListItem = ({item}) => {
+    const renderListItem = ({item,navigation}) => {
         return (
              <TouchableOpacity onPress={() => this.props.navigation.navigate({routeName: 'MealDetail', params: {
                  recipeId: item.id
@@ -56,7 +56,7 @@ render() {
 
     return (
         <SafeAreaView style={styles.container}>
-         <View style={styles.container}>
+        <View style={styles.container}>
 
             <FlatList
             // data={people}
