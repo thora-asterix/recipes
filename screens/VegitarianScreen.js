@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { render } from 'react-dom';
 
 
 class VegitarianScreen extends Component {
@@ -8,9 +7,7 @@ class VegitarianScreen extends Component {
         super(props);
     }
 
-    static navigationOptions = {
-        title: 'Filters'
-    };
+ 
 
     render()
 {

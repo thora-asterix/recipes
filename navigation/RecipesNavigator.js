@@ -35,7 +35,7 @@ const RecipesNavigator = createStackNavigator({
             headerStyle: {
                 backgroundColor: '#ffa500'
             },
-            headerTitle: 'Favorites',
+            headerTitle: 'Recipe',
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'
@@ -65,7 +65,7 @@ const FavoritesNavigator = createStackNavigator({
             headerStyle: {
                 backgroundColor: '#ffa500'
             },
-            headerTitle: 'Favorites',
+            headerTitle: 'Recipe',
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'
@@ -76,13 +76,13 @@ const FavoritesNavigator = createStackNavigator({
 })
 
 const FiltersNavigator = createStackNavigator ({
-    Filter: {
+    Categories: {
         screen: FiltersScreen,
         navigationOptions: ({navigation}) => ({
             headerStyle: {
                 backgroundColor: '#ffa500'
             },
-            headerTitle: 'Filter',
+            headerTitle: 'Categories',
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#fff'

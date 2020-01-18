@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { render } from 'react-dom';
 
 
 class FilterScreen extends Component {
@@ -9,14 +8,14 @@ class FilterScreen extends Component {
     }
 
     static navigationOptions = {
-        title: 'Filters'
+        title: 'Categories'
     };
 
     render()
 {
     return (
         <View style={styles.screen} >
-            <Text>The Filter Screen!</Text>
+            <Text>The Filter Screen! There will be 3 filter categories in this screen for meat, vegetarian and desert options.</Text>
         </View>
     )
 }

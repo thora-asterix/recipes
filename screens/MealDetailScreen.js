@@ -30,9 +30,7 @@ class  MealDetailScreen  extends Component {
         super(props);
     }
 
-    static navigationOptions = {
-        title: 'Recipe Details'
-    };
+
   render(){
 
     const recipeId =  this.props.navigation.getParam('recipeId');
@@ -42,7 +40,7 @@ class  MealDetailScreen  extends Component {
 
     return (
         <View style={styles.screen} >
-            <Text>The Meal Detail Screen!</Text>
+            <Text>The Recipe Detail Screen. Ingredients and steps will be implemented on this page.</Text>
             <RenderRecipe 
                 recipe={recipe}
             />

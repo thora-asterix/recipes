@@ -6,12 +6,6 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, Button, Touchabl
  import { connect } from 'react-redux';
 
 
- const people = [
-    {name: 'paul',lastName: 'sin', key: '1'},
-    {name: 'john', lastName: 'hot', key: '2'},
-    {name: 'linda', lastName: 'bote', key: '3'}
-];
-
 const mapDispatchToProps = {
     
      fetchRecipes
