@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Main from './components/MainComponent'
 import { Provider } from 'react-redux'
 import { ConfigureStore } from './redux/ConfigureStore'
 import * as Font from 'expo-font';

@@ -1,5 +1,5 @@
 import * as ActionTypes from './ActionTypes'
-import { baseURL } from './baseURL'
+import { baseURL } from '../baseURL'
 
 
 

@@ -18,6 +18,8 @@ function RenderRecipe(props) {
             featuredTitle={recipe.name}
             image={{uri: baseURL + recipe.image}}>
           <Text>{recipe.description}</Text>  
+          <Text style={{marginTop: 10 }}>The Recipe Detail Screen. Ingredients and steps will be implemented on this page.</Text>
+
             </Card>
 
         </View>
@@ -40,7 +42,6 @@ class  MealDetailScreen  extends Component {
 
     return (
         <View style={styles.screen} >
-            <Text>The Recipe Detail Screen. Ingredients and steps will be implemented on this page.</Text>
             <RenderRecipe 
                 recipe={recipe}
             />
