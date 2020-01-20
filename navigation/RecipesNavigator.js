@@ -89,6 +89,20 @@ const FiltersNavigator = createStackNavigator ({
             }
           
         })
+    },
+    MealDetail: {
+        screen: MealDetailScreen,
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#ffa500'
+            },
+            headerTitle: 'Recipe',
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+          
+        })
     }
 
 })
@@ -116,6 +130,9 @@ const RecipesFavTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarIcon: (tabInfo) => {
                 return <Ionicons name='ios-star' color={tabInfo.tintColor} size={25}></Ionicons>;
+            },
+            some:{
+                hello:'hello'
             }
         }
     }

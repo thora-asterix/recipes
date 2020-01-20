@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View,ScrollView, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements'
 import { connect } from 'react-redux';
 import { baseURL } from '../baseURL';
@@ -12,16 +12,26 @@ const mapStateToProps = state => {
 function RenderRecipe(props) {
     const {recipe} = props;
     
+
     return (
-        <View >
+        <View style={{flex: 1}}>
+        <ScrollView contentContainerStyle={{ flex: 1}} >
         <Card style={styles.card}
             featuredTitle={recipe.name}
             image={{uri: baseURL + recipe.image}}>
           <Text>{recipe.description}</Text>  
-          <Text style={{marginTop: 10 }}>The Recipe Detail Screen. Ingredients and steps will be implemented on this page.</Text>
+
+          <Text style={styles.ingi}>Ingredients</Text>
+          <Text style={{marginTop: 10 }}>{recipe.ingredients.map(item=>'Quantity: '+item.quantity+' of '+ item.name+' ('+item.type+')'+'\n')}</Text>
 
             </Card>
-
+        <Card style={styles.card}
+            featuredTitle={'Steps'}
+        >
+        <Text style={styles.ingi}>Steps to Cook!</Text>
+        <Text>{recipe.steps.map((item,id)=> (id+1)+'. '+item+'\n')}</Text>
+        </Card>
+        </ScrollView>
         </View>
     )
 }
@@ -51,11 +61,18 @@ class  MealDetailScreen  extends Component {
 }
 
 const styles = StyleSheet.create({
-    //   screen: {
-    //       flex: 1,
-    //       justifyContent: 'center',
-    //       alignItems: 'center'
-    //   },
+      screen: {
+          flex: 1,
+          height:'auto',
+          justifyContent: 'center',
+          alignItems: 'center'
+      },
+    ingi:{
+        textAlign:'center',
+        fontWeight:'bold',
+        fontSize:'15px',
+        marginTop:'10px'
+    },
       card: {
           flex: 1,
           justifyContent: 'center',
