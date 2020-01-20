@@ -95,8 +95,9 @@ render() {
         <SafeAreaView style={styles.container}>
 
         <View style={styles.container}>
-       
-            <TextInput
+       {this.state.loggedIn ? <Text>You are not logged In!</Text> : 
+       <View>
+       <TextInput
               value={this.state.username}
               onChangeText={(username) => this.setState({ username })}
               placeholder={'Username'}
@@ -115,6 +116,8 @@ render() {
               style={styles.input}
               onPress={this.onLogin.bind(this)}
             />
+            </View>}
+            
     
             <FlatList
             // data={people}

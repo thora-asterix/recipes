@@ -136,8 +136,9 @@ const styles = StyleSheet.create({
     },
     alternativeLayoutButtonContainer: {
         margin: 20,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-      }
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      },
+      
   });
 export default connect(mapStateToProps)(FilterScreen);
