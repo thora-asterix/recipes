@@ -8,3 +8,16 @@ export const recipes = (state = {recipes: []}, action) => {
             return state;
     }
 }
+
+const defaultLogin={
+    loggedIn:false
+}
+
+export const logIn = (state = defaultLogin, action) => {
+    switch(action.type){
+        case ActionTypes.LOG_IN_USER:
+            return{...state, loggedIn:true}
+        default:
+            return state;
+    }
+}

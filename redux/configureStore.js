@@ -1,14 +1,14 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { recipes } from './recipes'
-
+import {logIn} from './recipes'
 
 export const ConfigureStore = () => {
     // const middleware = [thunk]
     const store = createStore(
         combineReducers(
             {
-                
+                logIn,
                 recipes
             }
         ),
