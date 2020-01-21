@@ -30,8 +30,8 @@ class Main extends Component {
             password:'rana'
         },
         {
-            username:'billu',
-          password:'chutiya'
+            username:'thora',
+          password:'huang'
         }
       ]
 
