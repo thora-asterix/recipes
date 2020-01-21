@@ -15,6 +15,12 @@ export const fetchRecipes = () => dispatch => {
  })
 
 
- export const logInUser=()=>({
-     type:ActionTypes.LOG_IN_USER
+ export const logInUser=(username)=>({
+     type:ActionTypes.LOG_IN_USER,
+     payload:username
  })
+
+ export const logOutUser=(username)=>({
+    type:ActionTypes.LOG_OUT_USER,
+    payload:username
+})

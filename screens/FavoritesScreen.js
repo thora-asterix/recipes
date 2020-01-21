@@ -8,7 +8,7 @@ import { loggedIn } from '../redux/recipes';
 const mapStateToProps = state => {
     return {
     recipes: state.recipes,
-    loggedIn: state.logIn
+    loggedIn: state.logUser
     }
 }
 
@@ -43,7 +43,7 @@ class FavoritesScreen extends Component{
            const logIn = <Text>please log in</Text>;
         const favoriteRecipes = this.props.recipes.recipes.filter(recipe => recipe.favorite === true)
         console.log(favoriteRecipes);
-        console.log(this.props.loggedIn.loggedIn);
+        console.log(this.props.loggedIn);
 
       
 

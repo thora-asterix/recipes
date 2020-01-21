@@ -11,6 +11,7 @@ import VegitarianScreen from '../screens/VegitarianScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { Platform } from 'react-native';
 import { Icon } from 'react-native-elements';
+import Profile from '../screens/Profile';
 
 const RecipesNavigator = createStackNavigator({
     Main: {
@@ -133,6 +134,14 @@ const RecipesFavTabNavigator = createBottomTabNavigator({
             },
             some:{
                 hello:'hello'
+            }
+        }
+    },
+    Profile: {
+        screen: Profile,
+        navigationOptions: {
+            tabBarIcon: (tabInfo) => {
+                return <Ionicons name='ios-person' color={tabInfo.tintColor} size={25}></Ionicons>;
             }
         }
     }

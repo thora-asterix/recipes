@@ -5,60 +5,17 @@ import { Alert, TextInput, SafeAreaView, View, FlatList, StyleSheet, Text, Image
  import { fetchRecipes } from '../redux/ActionCreators'
  import { connect } from 'react-redux';
 import {logInUser} from '../redux/ActionCreators'
-
+import {logOutUser} from '../redux/ActionCreators'
 const mapDispatchToProps = {
-    
      fetchRecipes,
-     logInUser
 }
 
    
 class Main extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            username: '',
-            password: '',
-            loggedIn:false
-          };
-
     }
 
-    boom = [
-        {
-            username:'ash',
-            password:'rana'
-        },
-        {
-            username:'thora',
-          password:'huang'
-        }
-      ]
-
-    onLogin() {
-
-        const { username, password } = this.state;
-        const arr = this.boom.map(item=>item.username);
-    
-        if(arr.includes(this.state.username)){
-            Alert.alert('Credentials', `${username} + ${password}`);
-            this.setState({loggedIn:true});
-          this.props.logInUser();
-            this.props.navigation.setParams({results: 'one'});   // <--- set data when user clicks button.
-            console.log('alert will show '+ this.props)
-            
-            this.resetForm();
-        }else{
-            Alert.alert('Please sign up');
-            this.resetForm();
-
-        }
-    
-    }
-
-    resetForm(){
-        this.setState({username:'', password:''});
-    }
     static navigationOptions = {
         title: 'All Recipes'
     };
@@ -93,32 +50,7 @@ render() {
 
     return (
         <SafeAreaView style={styles.container}>
-
         <View style={styles.container}>
-       {this.state.loggedIn ? <Text>You are not logged In!</Text> : 
-       <View>
-       <TextInput
-              value={this.state.username}
-              onChangeText={(username) => this.setState({ username })}
-              placeholder={'Username'}
-              style={styles.input}
-            />
-            <TextInput
-              value={this.state.password}
-              onChangeText={(password) => this.setState({ password })}
-              placeholder={'Password'}
-              secureTextEntry={true}
-              style={styles.input}
-            />
-            
-            <Button
-              title={'Login'}
-              style={styles.input}
-              onPress={this.onLogin.bind(this)}
-            />
-            </View>}
-            
-    
             <FlatList
             // data={people}
             data={this.props.recipes.recipes}
@@ -133,7 +65,6 @@ render() {
 
 const mapStateToProps = state => ({
     recipes: state.recipes,
-    loggedIn: state.loggedIn
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Main);
