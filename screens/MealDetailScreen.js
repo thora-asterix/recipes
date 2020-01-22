@@ -8,7 +8,8 @@ import {addFavoriteRecipe} from '../redux/ActionCreators'
 const mapStateToProps = state => {
 
     return {
-        recipes: state.recipes
+        recipes: state.recipes,
+        favorites: state.favorites
     }
 }
 
@@ -24,32 +25,38 @@ function RenderRecipe(props) {
 
     return (
         <View style={{flex: 1}}>
-        <ScrollView contentContainerStyle={{ flex: 1}} >
+            <ScrollView contentContainerStyle={{ flex: 1}} >
         
-        <Card style={styles.card}
-            featuredTitle={recipe.name}
-            image={{uri: baseURL + recipe.image}}>
-          <Text>{recipe.description}</Text>  
-          <Icon
-                    name= 'heart'
-                    type='font-awesome'
-                    color='#f50'
-                    raised
-                    reverse
-                    onPress={()=>props.addFavoriteRecipe(recipe.id)}
-                />
-          <Text style={styles.ingi}>Ingredients</Text>
-          <Text style={{marginTop: 10 }}>{recipe.ingredients.map(item=>'Quantity: '+item.quantity+' of '+ item.name+' ('+item.type+')'+'\n')}</Text>
+                <Card style={styles.card}
+                    featuredTitle={recipe.name}
+                    image={{uri: baseURL + recipe.image}}>
 
-        </Card>
+                    <Text>{recipe.description}</Text>  
 
-        <Card style={styles.card}
-            featuredTitle={'Steps'}
-        >
-        <Text style={styles.ingi}>Steps to Cook!</Text>
-        <Text>{recipe.steps.map((item,id)=> (id+1)+'. '+item+'\n')}</Text>
-        </Card>
-        </ScrollView>
+                    <Icon
+                        name={props.favorite ? 'heart' : 'heart-o'}                    
+                        type='font-awesome'
+                        color='#f50'
+                        raised
+                        reverse
+                        onPress={()=>props.addFavoriteRecipe(recipe.id)}
+                    />
+
+                    <Text style={styles.ingi}>Ingredients</Text>
+
+                    <Text style={{marginTop: 10 }}>{recipe.ingredients.map(item=>'Quantity: '+item.quantity+' of '+ item.name+' ('+item.type+')'+'\n')}</Text>
+
+                </Card>
+
+                <Card style={styles.card}
+                    featuredTitle={'Steps'}>
+
+                    <Text style={styles.ingi}>Steps to Cook!</Text>
+
+                    <Text>{recipe.steps.map((item,id)=> (id+1)+'. '+item+'\n')}</Text>
+                    
+                </Card>
+            </ScrollView>
         </View>
     )
 }
@@ -72,6 +79,7 @@ class  MealDetailScreen  extends Component {
         <View style={styles.screen} >
             <RenderRecipe 
                 recipe={recipe}
+                favorite={this.props.favorites.includes(recipeId)}
                 addFavoriteRecipe={this.props.addFavoriteRecipe}
             />
         </View>
