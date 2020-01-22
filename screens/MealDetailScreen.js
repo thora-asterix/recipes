@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import { Text, View,ScrollView, StyleSheet } from 'react-native';
-import { Card } from 'react-native-elements'
+import { Card ,Icon} from 'react-native-elements'
 import { connect } from 'react-redux';
 import { baseURL } from '../baseURL';
+import {addFavoriteRecipe} from '../redux/ActionCreators'
 
 const mapStateToProps = state => {
+
     return {
         recipes: state.recipes
     }
 }
+
+const mapDispatchToProps = {
+    addFavoriteRecipe
+}
+
+
+
 function RenderRecipe(props) {
     const {recipe} = props;
     
@@ -16,15 +25,24 @@ function RenderRecipe(props) {
     return (
         <View style={{flex: 1}}>
         <ScrollView contentContainerStyle={{ flex: 1}} >
+        
         <Card style={styles.card}
             featuredTitle={recipe.name}
             image={{uri: baseURL + recipe.image}}>
           <Text>{recipe.description}</Text>  
-
+          <Icon
+                    name= 'heart'
+                    type='font-awesome'
+                    color='#f50'
+                    raised
+                    reverse
+                    onPress={()=>props.addFavoriteRecipe(recipe.id)}
+                />
           <Text style={styles.ingi}>Ingredients</Text>
           <Text style={{marginTop: 10 }}>{recipe.ingredients.map(item=>'Quantity: '+item.quantity+' of '+ item.name+' ('+item.type+')'+'\n')}</Text>
 
-            </Card>
+        </Card>
+
         <Card style={styles.card}
             featuredTitle={'Steps'}
         >
@@ -54,6 +72,7 @@ class  MealDetailScreen  extends Component {
         <View style={styles.screen} >
             <RenderRecipe 
                 recipe={recipe}
+                addFavoriteRecipe={this.props.addFavoriteRecipe}
             />
         </View>
     )
@@ -80,4 +99,4 @@ const styles = StyleSheet.create({
       }
 });
 
-export default connect(mapStateToProps)(MealDetailScreen);
+export default connect(mapStateToProps,mapDispatchToProps)(MealDetailScreen);

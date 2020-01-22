@@ -24,3 +24,8 @@ export const fetchRecipes = () => dispatch => {
     type:ActionTypes.LOG_OUT_USER,
     payload:username
 })
+
+export const addFavoriteRecipe=(recipeId)=>({
+    type:ActionTypes.ADD_FAVORITE,
+    payload:recipeId
+})
